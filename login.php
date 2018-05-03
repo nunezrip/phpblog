@@ -32,10 +32,16 @@
     //Grab the password from the row and assign it to the variable $db_password
     $db_password = $row['password'];
 
-    // Conditional statement to check if the password entered matches the one inthe database
+    //Grab the admin from the row and assign it to the variable $admin
+    $admin = $row['admin'];
+
+    // Conditional statement to check if the password entered matches the one in the database
     if($password == $db_password) {
         $_SESSION['username'] = $username;
         $_SESSION['id'] = $id;
+        if($admin == 1) {
+            $_SESSION['admin'] = 1;
+        }
         // Redirect to page index.php
         header("location: index.php");
 
@@ -60,7 +66,7 @@
 <body>
 
     <h1 style="font-family: Tahoma;">Login</h1>
-    <form action="login.php" method="post" enctype="multipart/form-data">
+    <form action="post.php" method="post" enctype="multipart/form-data">
         <input placeholder="Username" name="username" type="text" autofocus>
         <input placeholder="Password" name="password" type="password">
         <input name="login" type="submit" value="Login">

@@ -1,10 +1,11 @@
 <?php
-
+// Starting session - Session variables hold information about one single user, and are available to all pages in one application.
 session_start();
 
 // If seesion is not set redirect to the login.php page
 if(!isset($_SESSION['id'])) {
     header("location: login.php");
+    // return;
 }
 
 include_once("db.php");
@@ -20,40 +21,45 @@ include_once("db.php");
   <title>Blog</title>
 </head>
 <body>
-  
+
   <?php
-      require_once("nbbc/nbbc.php");
 
-      $bbcode = new BBCode;
+    require_once("nbbc/nbbc.php");
 
-      $sql = "SELECT * FROM posts ORDER BY id DESC";
+    $bbcode = new BBCode;
 
-      $res = mysqli_query ($db, $sql) or die(mysqli_error());
+    $pid = $_GET['pid'];
 
-      $posts = "";
+    $sql = "SELECT * FROM posts WHERE id=$pid LIMIT 1";
 
-      if(mysqli_num_rows($res) > 0) {
-          while($row = mysqli_fetch_assoc($res)) {
-            $id = $row['id'];
-            $title = $row['title'];
-            $content = $row['content'];
-            $date = $row['date'];
+    $res = mysqli_query($db, $sql) or die(mysql_errors());
 
-            $admin = "<div><a href='del_post.php?pid=$id'>DELETE</a>&nbsp;<a href='edit_post.php?pid=$id'>EDIT</a></div>";
+    if (mysqli_num_rows($res) > 0) {
+      while ($row = mysqli_fetch_assoc($res)) {
+        
+        $id = $row['id'];
+        $title = $row['title'];
+        $date = $row['date'];
+        $content = $row['content'];
 
-            $output = $bbcode->Parse($content);
+        if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
+          $admin = "<div><A href='del_post.php?pid=$id'>DELETE</a>&nbsp;<a href='edit_post.php?pid=$id'>EDIT</a></div>";
+        } else {
+            $admin = "";
+        }
 
-            $posts .= "<div><h2><a href='view_post.php?pid=$id'>$title</a></h2><h3>$date</h3><p>$output</p>$admin</div>";
-          }
-          echo $posts;
-      } else {
-          echo "There are no posts to display!";
-      }
+
+        $output = $bbcode->Parse($content);
+
+        echo "<div><h2>$title</h2><h3>$date</h3<p>$output</p>$admin<hr /></div";
+    }
+  } else {
+      echo "<p>There are no posts to display!</p>";
+  }
 
   ?>
-
-        <!-- Link to redirect to the post.php page if there are no post  -->
-        <a href='post.php' target='_blank'>ADD YOUR POST</a> 
+  
+  <a href="index.php">RETURN</a>;
 
 </body>
 </html>

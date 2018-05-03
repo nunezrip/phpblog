@@ -31,11 +31,17 @@ body {
 	text-indent: 10px;
 }
 
-.registration-form > button {
+.registration-form > .register-btn {
 	border: none;
 	padding: 20px;
 	font-size: 16px;
 	text-transform: uppercase;
 	background-color: #888;
 	color: #fff;
+}
+
+.back-link {
+	font-size: 30px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	color: blue;
 }

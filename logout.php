@@ -1,6 +1,8 @@
 <?php
 
   session_start();
+
+  // Remove all global session variables and destroy the session using session_destroy().
   session_destroy();
 
 ?>

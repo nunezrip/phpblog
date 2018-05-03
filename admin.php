@@ -3,12 +3,10 @@
 session_start();
 
 // If seesion is not set redirect to the login.php page
-if(!isset($_SESSION['id'])) {
+if(!isset($_SESSION['admin']) && $_SESSION['admin'] !=1) {
     header("location: login.php");
-    // return;
+    return;
 }
-
-include_once("db.php");
 
 ?>
 
@@ -24,13 +22,6 @@ include_once("db.php");
   
   <?php
 
-    // Requiring nbbc: NBBC is a high-speed, extensible, easy-to-use validating BBCode parser that accepts BBCode as input and generates XHTML 1.0 Transitional-compliant markup as its output no matter how mangled the input.
-        
-    require_once("nbbc/nbbc.php");
-
-    // Set new object of BBCode
-    $bbcode = new BBCode;
-
     // Set-up SQL query selecting data from the "blog"csql databse table called "posts" and ordering them in descending order
     $sql = "SELECT * FROM posts ORDER BY id DESC";
 
@@ -44,32 +35,22 @@ include_once("db.php");
           while($row = mysqli_fetch_assoc($res)) {
             $id = $row['id'];
             $title = $row['title'];
-            $content = $row['content'];
             $date = $row['date'];
 
-            // Sending the data to the BBCode parser to remove potential malicious data elements or charcters from the result and assigning the parsed result to the ($output)variable.
-            $output = $bbcode->Parse($content);
+            // Setting up an $admin variabel to assign DELETE and EDIT links for removing or updating existing posts
+            $admin = "<div><a href='del_post.php?pid=$id'>DELETE</a>&nbsp;<a href='edit_post.php?pid=$id'>EDIT</a></div>";
 
             // Setting up a $posts variable use to assigne the BBCode-parsed results of the query under $output for viewing/displaying
-            $posts .= "<div><h2><a href='view_post.php?pid=$id'>$title</a></h2><h3>$date</h3><p>$output</p>$admin<hr /></div>";
+            $posts .= "<div><h2><a href='view_post.php?pid=$id' target='_blank'>$title</a></h2><h3>$date</h3$admin<hr /></div>";
           }
           echo $posts;
       } else {
           echo "There are no posts to display!";
       }
 
-      if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
-          echo "<a href='admin.php'>ADMIN</a> | <a href='logout.php'>LOGOUT</a>";
-      }
-
-      if(!isset($_SESSION['username'])) {
-          echo "<a href='login.php'>LOGIN</a>";
-      }
-
-      if(isset($_SESSION['username']) && !isset($_SESSION['admin'])) {
-        echo "<a href='logout.php'>LOGOUT</a>";
-    }
   ?>
+        <!-- Link to redirect to the post.php page if there are no post  -->
+        <a href='post.php' target='_blank'>ADD YOUR POST</a> 
 
 </body>
 </html>
