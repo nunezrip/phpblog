@@ -49,7 +49,7 @@
 
   <?php
       $sql_get = "SELECT * FROM posts WHERE id=$pid LIMIT 1";
-      $res = mysql_query($db, $sql_get);
+      $res = mysqli_query($db, $sql_get);
 
       if(mysqli_num_rows($res) > 0) {
           while ($row = mysqli_fetch_assoc($res)) {

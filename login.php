@@ -2,7 +2,6 @@
 
   session_start();
 
-
   // 3x SQL injection prevention methods: strip_tags, stripslashes, and mysqli_real_escape_string
 
   if(isset($_POST['login'])) {
@@ -17,17 +16,19 @@
     $password = mysqli_real_escape_string($db, $password);
 
     // One additional security layer: cinverting the password into md5 encrypted password
-    $passsword = md5($password);
+    $password = md5($password);
 
     // $sql = "SELECT * FROM ussers WHERE username = '$username'". This code on sql is how hackers can do "sql injection" using comment hashes "// DROP TABLE users" to get a copy of the table "users".
   
     // SQL Databasse query LIMITING the query to just one
-    $sql = "SELECT * FROM ussers WHERE username = '$username' LIMIT 1";
+    $sql = "SELECT * FROM users WHERE username = '$username' LIMIT 1";
     // Set the query variable passing the sql database
     $query = mysqli_query($db, $sql);
+   
     // Fetch the user_id from the table row and assign it to the variable $id
     $row = mysqli_fetch_array($query);
     $id = $row['id'];
+  
     //Grab the password from the row and assign it to the variable $db_password
     $db_password = $row['password'];
 
