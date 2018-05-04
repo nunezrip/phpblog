@@ -1,9 +1,10 @@
 <?php
 
+  // Satrting session and calling the file "db.php" which contains our connection to the databas: 
+  // $db = mysqli_connect("localhost", "root", "", "blog");
   session_start();
 
   // 3x SQL injection prevention methods: strip_tags, stripslashes, and mysqli_real_escape_string
-
   if(isset($_POST['login'])) {
     include_once("db.php");
     $username = strip_tags($_POST['username']);
@@ -46,10 +47,9 @@
         header("location: index.php");
 
     } else {
+        echo "<a class='back-link' href='login.php'>BACK</a>";  
         echo "Incorrect username or password";
     }
-
-
 
   }
 
@@ -66,7 +66,7 @@
 <body>
 
     <h1 style="font-family: Tahoma;">Login</h1>
-    <form action="post.php" method="post" enctype="multipart/form-data">
+    <form action="login.php" method="post" enctype="multipart/form-data">
         <input placeholder="Username" name="username" type="text" autofocus>
         <input placeholder="Password" name="password" type="password">
         <input name="login" type="submit" value="Login">

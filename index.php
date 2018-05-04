@@ -4,7 +4,7 @@ session_start();
 
 // If seesion is not set redirect to the login.php page
 if(!isset($_SESSION['id'])) {
-    header("location: login.php");
+    header("location: register.php");
     // return;
 }
 
@@ -21,7 +21,7 @@ include_once("db.php");
   <title>Blog</title>
 </head>
 <body>
-  
+
   <?php
 
     // Requiring nbbc: NBBC is a high-speed, extensible, easy-to-use validating BBCode parser that accepts BBCode as input and generates XHTML 1.0 Transitional-compliant markup as its output no matter how mangled the input.
@@ -47,6 +47,8 @@ include_once("db.php");
             $content = $row['content'];
             $date = $row['date'];
 
+            $admin = "<div><a href='del_post.php?pid=$id'>DELETE</a>&nbsp<a href='edit_post.php?pid=$id'>EDIT</a></div>";
+
             // Sending the data to the BBCode parser to remove potential malicious data elements or charcters from the result and assigning the parsed result to the ($output)variable.
             $output = $bbcode->Parse($content);
 
@@ -70,6 +72,8 @@ include_once("db.php");
         echo "<a href='logout.php'>LOGOUT</a>";
     }
   ?>
+
+
 
 </body>
 </html>

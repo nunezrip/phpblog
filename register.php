@@ -92,13 +92,30 @@
 </head>
 <body>
 
+<div class='heading'>
+  <h1 class='headline'>Hi there! Welcome to myBlog!</h1>
+    <h2>If you are a new user; please register; otherwise LOGIN below:</h2>
+    <!-- <h1 style="font-family: Tahoma;">Login</h1> -->
+    <div class="login-form">
+    <form action="login.php" method="post" enctype="multipart/form-data">
+        <input placeholder="Username" name="username" type="text" autofocus>
+        <input placeholder="Password" name="password" type="password">
+        <input name="login" type="submit" value="Login">
+    </form>
+    
+    </div>
+  </div>
+
+
+  <div class='reg-form'
   <form class='registration-form' action="register.php" method="post" enctype="multipart/form-data">
       <input placeholder="Username" name="username" type="text" autofocus>
       <input placeholder="Password" name="password" type="password">
       <input placeholder="Confirm Password" name="password_confirm" type="password">
       <input placeholder="E-mail Address" name="email" type="text">
-      <input name="register" type="submit" value="Register">
+      <input class='reg-btn' name="register" type="submit" value="Register">
   </form>
-
+  </div>
+  <img class="blg" src="./img/blg.png" alt="">
 </body>
 </html>

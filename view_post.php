@@ -48,7 +48,6 @@ include_once("db.php");
             $admin = "";
         }
 
-
         $output = $bbcode->Parse($content);
 
         echo "<div><h2>$title</h2><h3>$date</h3<p>$output</p>$admin<hr /></div";

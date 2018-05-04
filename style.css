@@ -1,11 +1,42 @@
 body {
 	height: 100vh;
 	font-family: Arial, Helvetica, sans-serif;
+
 	background-color: #eee;
 	position: relative;
+
+	background-image: url('img/bcg.jpg');
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 
-.registration-form {
+.headline:hover {
+	transform: scaleX(1.5);
+	transition: all 0.8 ease;
+}
+.blg {
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	top: 403px;
+	left: 443px;
+	border-radius: 20px;
+	margin-bottom: 30px;
+}
+
+img {
+	opacity: 0.5;
+}
+
+.heading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: whitesmoke;
+}
+
+.reg-form {
 	display: flex;
 	flex-wrap: wrap;
 	width: 500px;
@@ -14,26 +45,36 @@ body {
 	top: 50%;
 	transform: translate(-50%, -50%);
 	padding: 20px;
-	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 10px 10px black;
+	margin-top: 50px;
+
+	/* border: 2px solid */
+	background-color: gray;
 }
 
-.registration-form > * {
+.login-form {
+	margin-top: 15px;
+	outline: none;
+	background: transparent;
+}
+.reg-form > * {
 	width: 100%;
 }
 
-.registration-form > *:not(:last-child) {
+.reg-form > *:not(:last-child) {
 	margin-bottom: 10px;
 }
 
 .registration-form > input {
-	height: 20px;
+	height: 25px;
 	font-size: 16px;
 	text-indent: 10px;
 }
 
-.registration-form > .register-btn {
+.registration-form > .reg-btn {
 	border: none;
-	padding: 20px;
+	padding-top: 10px;
+	padding-bottom: 25px;
 	font-size: 16px;
 	text-transform: uppercase;
 	background-color: #888;
