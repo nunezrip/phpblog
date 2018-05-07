@@ -14,29 +14,20 @@ body {
 	transform: scaleX(1.5);
 	transition: all 0.8 ease;
 }
-.blg {
-	height: 100px;
-	width: 100px;
-	position: absolute;
-	top: 403px;
-	left: 443px;
-	border-radius: 20px;
-	margin-bottom: 30px;
-}
-
-img {
-	opacity: 0.5;
-}
 
 .heading {
+	margin-top: 15px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 	flex-direction: column;
-	color: whitesmoke;
+	color: rgb(238, 225, 225);
+	text-shadow: 0 10px 10px black;
+	font-size: 30px;
 }
 
-.reg-form {
+form {
 	display: flex;
 	flex-wrap: wrap;
 	width: 500px;
@@ -47,42 +38,21 @@ img {
 	padding: 20px;
 	box-shadow: 0 10px 10px black;
 	margin-top: 50px;
-
-	/* border: 2px solid */
 	background-color: gray;
-}
-
-.login-form {
-	margin-top: 15px;
-	outline: none;
-	background: transparent;
-}
-.reg-form > * {
-	width: 100%;
 }
 
 .reg-form > *:not(:last-child) {
 	margin-bottom: 10px;
 }
 
-.registration-form > input {
+input {
 	height: 25px;
 	font-size: 16px;
 	text-indent: 10px;
 }
 
-.registration-form > .reg-btn {
-	border: none;
-	padding-top: 10px;
-	padding-bottom: 25px;
-	font-size: 16px;
-	text-transform: uppercase;
-	background-color: #888;
-	color: #fff;
-}
-
 .back-link {
 	font-size: 30px;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	color: blue;
+	color: rgb(77, 24, 82);
 }

@@ -80,5 +80,6 @@ input {
 .back-link {
 	font-size: 30px;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	color: blue;
+	color: rgb(121, 13, 148);
+	margin-bottom: 20px;
 }

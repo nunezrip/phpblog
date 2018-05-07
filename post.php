@@ -22,7 +22,7 @@
       $content = mysqli_real_escape_string($db, $content);
 
       // Formatting the post date output - Prints the day, date, month, year, time, AM or PM
-      $date = date('l jS \of F Y h:i:s A');
+      $date = date('l jS \of: F Y h:i:s A');
 
       // Prepare the SQL Statement ($sql) to store the post data into the database
       $sql = "INSERT into posts (title, content, date) VALUES ('$title', '$content', '$date')";

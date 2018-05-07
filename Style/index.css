@@ -29,11 +29,15 @@ body {
 } */
 
 .heading {
+	margin-top: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 	flex-direction: column;
-	color: whitesmoke;
+	color: rgb(238, 225, 225);
+	text-shadow: 0 10px 10px black;
+	font-size: 30px;
 }
 
 .reg-form {
@@ -47,6 +51,7 @@ body {
 	padding: 20px;
 	box-shadow: 0 10px 10px black;
 	margin-top: 50px;
+	color: whitesmoke;
 
 	/* border: 2px solid */
 	background-color: gray;
@@ -67,18 +72,8 @@ input {
 	text-indent: 10px;
 }
 
-.registration-form > .reg-btn {
-	border: none;
-	padding-top: 10px;
-	padding-bottom: 25px;
-	font-size: 16px;
-	text-transform: uppercase;
-	background-color: #888;
-	color: #fff;
-}
-
 .back-link {
 	font-size: 30px;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	color: blue;
+	color: goldenrod;
 }

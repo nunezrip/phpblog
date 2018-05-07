@@ -66,15 +66,15 @@
 
 </head>
 <body>
+    <div class="heading">
 <img src="img/login5.png" alt="login-btn" >
+</div>
 
-<div class='reg-form'
-    <h1 style="font-family: Tahoma;">Welcome:</h1>
     <form action="login.php" method="post" enctype="multipart/form-data">
         <input placeholder="Username" name="username" type="text" autofocus>
         <input placeholder="Password" name="password" type="password">
         <input name="login" type="submit" value="Login">
     </form>
-</div>
+
 </body>
 </html>

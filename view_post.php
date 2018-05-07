@@ -27,7 +27,7 @@ if(!isset($_SESSION['id'])) {
 
     $bbcode = new BBCode;
 
-    $pid = isset($_GET['pid']) ? $_GET['id'] : '';;
+    $pid = isset($_GET['pid']) ;
 
     $sql = "SELECT * FROM posts WHERE id=$pid LIMIT 1";
 
@@ -59,7 +59,8 @@ if(!isset($_SESSION['id'])) {
   ?>
   
   <!-- Returns to index.php -->
-  <a href="index.php">RETURN</a>;
+  <a href="index.php">RETURN:</a>
+  <p>...To yourBlog!</p>
 
 </body>
 </html>

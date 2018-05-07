@@ -24,6 +24,10 @@ include_once("db.php");
 </head>
 <body>
 
+    <div class="heading">
+    <img src="img/BlogIcon2.png" alt="login-logo" height="100" width="200">
+    <h1 class='headline'>Welcome to <i>yourBlog!</i></h1>
+    </div>
   <?php
 
     // Requiring nbbc: NBBC is a high-speed, extensible, easy-to-use validating BBCode parser that accepts BBCode as input and generates XHTML 1.0 Transitional-compliant markup as its output no matter how mangled the input.
@@ -59,11 +63,12 @@ include_once("db.php");
           }
           echo $posts;
       } else {
-          echo "There are no posts to display!";
+        echo "<a class='back-link' href='view_post.php'>BACK:</a>";
+          echo "...There are no posts to display!";
       }
 
       if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
-          echo "<a href='admin.php'>ADD POST</a> | <a href='logout.php'>LOGOUT</a>";
+          echo "<a href='admin.php'>ADD POST</a> | <a href='home.php'>LOGOUT</a>";
       }
 
       if(!isset($_SESSION['username'])) {
@@ -71,11 +76,9 @@ include_once("db.php");
       }
 
       if(isset($_SESSION['username']) && !isset($_SESSION['admin'])) {
-        echo "<a href='logout.php'>LOGOUT</a>";
+        echo "<a href='home.php'>LOGOUT</a>";
     }
   ?>
-
-
 
 </body>
 </html>

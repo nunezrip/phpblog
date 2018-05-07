@@ -54,7 +54,9 @@ if(!isset($_SESSION['admin']) && $_SESSION['admin'] !=1) {
 
   ?>
         <!-- Link to redirect to the post.php page if there are no post  -->
-        <a href='post.php' target='_blank'>ADD YOUR POST</a><br><br>; 
+
+        <a href='post.php' target='_blank'>ADD YOUR POST</a><br><br>
+        <a class='back-link' href='index.php'>BACK</a>
 
 </body>
 </html>

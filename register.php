@@ -92,20 +92,16 @@
 <body>
 
 <div class="heading">
-<h1 class="headline">Please Register</h1>
-
-  </div>
+    <h1 class="headline">Please Register</h1>
+</div>
  
-  <div class='reg-form'
-  <form class='registration-form' action="register.php" method="post" enctype="multipart/form-data">
+  <form action="register.php" method="post" enctype="multipart/form-data">
       <input placeholder="Username" name="username" type="text" autofocus>
       <input placeholder="Password" name="password" type="password">
       <input placeholder="Confirm Password" name="password_confirm" type="password">
       <input placeholder="E-mail Address" name="email" type="text">
-      <input class='reg-btn' name="register" type="submit" value="Register">
+      <input name="register" type="submit" value="Register">
   </form>
-  </div>
- 
  
 </body>
 </html>
