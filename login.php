@@ -48,7 +48,7 @@
 
     } else {
         echo "<a class='back-link' href='login.php'>BACK</a>";  
-        echo "Incorrect username or password";
+        echo "...Incorrect username or password!";
     }
 
   }
@@ -61,16 +61,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Login</title>
+  <title>Blog Login</title>
+  <link href='Style/login.css' type='text/css' rel='stylesheet'>
+
 </head>
 <body>
+<img src="img/login5.png" alt="login-btn" >
 
-    <h1 style="font-family: Tahoma;">Login</h1>
+<div class='reg-form'
+    <h1 style="font-family: Tahoma;">Welcome:</h1>
     <form action="login.php" method="post" enctype="multipart/form-data">
         <input placeholder="Username" name="username" type="text" autofocus>
         <input placeholder="Password" name="password" type="password">
         <input name="login" type="submit" value="Login">
     </form>
-  
+</div>
 </body>
 </html>

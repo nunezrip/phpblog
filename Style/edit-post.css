@@ -1,0 +1,58 @@
+body {
+	height: 100vh;
+	font-family: Arial, Helvetica, sans-serif;
+
+	background-color: rgba(92, 76, 76, 0.822);
+	position: relative;
+
+	/* background-image: url('img/bcg.jpg'); */
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.headline:hover {
+	transform: scaleX(1.5);
+	transition: all 0.8 ease;
+}
+
+.back-link {
+	font-size: 30px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	color: blue;
+}
+
+.heading {
+	margin-top: 20px;
+	margin-bottom: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	color: rgb(238, 225, 225);
+	text-shadow: 0 10px 10px black;
+	font-size: 40px;
+}
+
+.update-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	color: rgb(238, 225, 225);
+	text-shadow: 0 10px 10px black;
+	font-size: 30px;
+}
+
+input[type='submit'] {
+	width: 8em;
+	height: 2em;
+	margin-top: 20px;
+	margin-bottom: 25px;
+	color: cornsilk;
+	font-size: 20px;
+	font-weight: bolder;
+	background-color: rgba(102, 52, 69, 0.644);
+	box-shadow: brown;
+}

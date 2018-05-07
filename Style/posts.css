@@ -1,0 +1,53 @@
+body {
+	height: 100vh;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: rgb(143, 119, 119);
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	/* background-image: url(./img/home-page-bkg.jpg); */
+}
+
+.headline:hover {
+	transform: scaleX(1.5);
+	transition: all 0.8 ease;
+}
+h1 {
+	margin-top: 0;
+}
+
+.heading {
+	margin-top: 20px;
+	margin-bottom: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	color: rgb(238, 225, 225);
+	text-shadow: 0 10px 10px black;
+	font-size: 40px;
+}
+
+.post-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	color: rgb(238, 225, 225);
+	text-shadow: 0 10px 10px black;
+	font-size: 30px;
+}
+
+input[type='submit'] {
+	width: 8em;
+	height: 2em;
+	margin-top: 20px;
+	margin-bottom: 25px;
+	color: cornsilk;
+	font-size: 20px;
+	font-weight: bolder;
+	background-color: rgba(102, 52, 69, 0.644);
+	box-shadow: brown;
+}

@@ -18,7 +18,9 @@ include_once("db.php");
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Blog</title>
+  <title>Blog Index</title>
+  <link href='Style/index.css' type='text/css' rel='stylesheet'>
+
 </head>
 <body>
 
@@ -61,7 +63,7 @@ include_once("db.php");
       }
 
       if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
-          echo "<a href='admin.php'>ADMIN</a> | <a href='logout.php'>LOGOUT</a>";
+          echo "<a href='admin.php'>ADD POST</a> | <a href='logout.php'>LOGOUT</a>";
       }
 
       if(!isset($_SESSION['username'])) {

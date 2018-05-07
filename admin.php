@@ -1,6 +1,7 @@
 <?php
 // Starting session - Session variables hold information about one single user, and are available to all pages in one application.
 session_start();
+include_once("db.php");
 
 // If seesion is not set redirect to the login.php page
 if(!isset($_SESSION['admin']) && $_SESSION['admin'] !=1) {
@@ -17,6 +18,8 @@ if(!isset($_SESSION['admin']) && $_SESSION['admin'] !=1) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Blog</title>
+  <link href='Style/admin.css' type='text/css' rel='stylesheet'>
+
 </head>
 <body>
   
@@ -38,19 +41,20 @@ if(!isset($_SESSION['admin']) && $_SESSION['admin'] !=1) {
             $date = $row['date'];
 
             // Setting up an $admin variabel to assign DELETE and EDIT links for removing or updating existing posts
-            $admin = "<div><a href='del_post.php?pid=$id'>DELETE</a>&nbsp;<a href='edit_post.php?pid=$id'>EDIT</a></div>";
+            $admin = "<div><a href='del_post.php?pid=$id'>DELETE</a>&nbsp;&nbsp;<a href='edit_post.php?pid=$id'>EDIT</a></div>";
 
             // Setting up a $posts variable use to assigne the BBCode-parsed results of the query under $output for viewing/displaying
-            $posts .= "<div><h2><a href='view_post.php?pid=$id' target='_blank'>$title</a></h2><h3>$date</h3$admin<hr /></div>";
+            $posts .= "<div><h2><a href='view_post.php?pid=$id' target='_blank'>$title</a></h2><h3>Time-Stamp: $date<br><br></h3$admin<hr /></div>";
           }
           echo $posts;
       } else {
+        echo "<a class='back-link' href='admin.php'>BACK:</a>";
           echo "There are no posts to display!";
       }
 
   ?>
         <!-- Link to redirect to the post.php page if there are no post  -->
-        <a href='post.php' target='_blank'>ADD YOUR POST</a>; 
+        <a href='post.php' target='_blank'>ADD YOUR POST</a><br><br>; 
 
 </body>
 </html>

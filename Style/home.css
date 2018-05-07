@@ -1,0 +1,29 @@
+body {
+	height: 100vh;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: rgb(143, 119, 119);
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	/* background-image: url(./img/home-page-bkg.jpg); */
+}
+
+.headline:hover {
+	transform: scaleX(1.5);
+	transition: all 0.8 ease;
+}
+h1 {
+	margin-top: 0;
+}
+
+.heading {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	color: rgb(238, 225, 225);
+	text-shadow: 0 10px 10px black;
+	font-size: 30px;
+}

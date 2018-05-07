@@ -54,9 +54,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Blog - Post</title>
+  <link href='Style/edit-post.css' type='text/css' rel='stylesheet'>
+  
 </head>
 <body>
 
+<div class='heading'>
+<img src="img/edit-icon.png" alt="login-logo" height="70" width="200">
+
+  <!-- <h1 class='headline'>Edit your post!</h1> -->
+
+  </div>
+<div class="update-form"
   <?php
       // Setup the sql query SELECTING from the table posts by the id and limiting the selection to just one
       $sql_get = "SELECT * FROM posts WHERE id=$pid LIMIT 1";
@@ -70,14 +79,16 @@
           while ($row = mysqli_fetch_assoc($res)) {
             $title = $row['title'];
             $content = $row['content'];
-
             echo "<form action='edit_post.php?pid=$pid' method='post' enctype='multipart/form-data'>";
             echo "<input placeholder='Title' name='title' type='text' value='$title' autofocus size='48'><br /><br />";
             echo "<textarea placeholder='Content' name='content' rows='20' cols='50'>$content</textarea><br />";
           }
       }
   ?>
-      <input name="update" type="submit" value="Update">
+  <input name="update" type="submit" value="Update">
+  </div>
+      
+    
   </form>
 
 </body>

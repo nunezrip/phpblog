@@ -26,12 +26,11 @@
       $password_confirm = md5($password_confirm);
 
       // Inserting username, password, email into the database
-      $sql_store = "INSERT into users(username, password, email) VALUES ('$username', '$password', '$email')";
+      $sql_store = "INSERT into users (username, password, email) VALUES ('$username', '$password', '$email')";
 
       // Checking and comparing entered username and email with the database holdings/records
       $sql_fetch_username = "SELECT username FROM users WHERE username = '$username'";
       $sql_fetch_email = "SELECT email FROM users WHERE email = '$email'";
-
 
       $query_username = mysqli_query($db, $sql_fetch_username);
       $query_email = mysqli_query($db, $sql_fetch_email);
@@ -87,26 +86,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Register</title>
+  <title>Blog Register</title>
   <link href='style.css' type='text/css' rel='stylesheet'>
 </head>
 <body>
 
-<div class='heading'>
-  <h1 class='headline'>Hi there! Welcome to myBlog!</h1>
-    <h2>If you are a new user; please register; otherwise LOGIN below:</h2>
-    <!-- <h1 style="font-family: Tahoma;">Login</h1> -->
-    <div class="login-form">
-    <form action="login.php" method="post" enctype="multipart/form-data">
-        <input placeholder="Username" name="username" type="text" autofocus>
-        <input placeholder="Password" name="password" type="password">
-        <input name="login" type="submit" value="Login">
-    </form>
-    
-    </div>
+<div class="heading">
+<h1 class="headline">Please Register</h1>
+
   </div>
-
-
+ 
   <div class='reg-form'
   <form class='registration-form' action="register.php" method="post" enctype="multipart/form-data">
       <input placeholder="Username" name="username" type="text" autofocus>
@@ -116,6 +105,7 @@
       <input class='reg-btn' name="register" type="submit" value="Register">
   </form>
   </div>
-  <img class="blg" src="./img/blg.png" alt="">
+ 
+ 
 </body>
 </html>
