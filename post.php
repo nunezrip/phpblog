@@ -66,6 +66,7 @@ Enter Your Post!
       <textarea placeholder="Content" name="content" rows="20" cols="50" style="font-size:18px"></textarea><br />
       <input name="post" type="submit" value="Post">
   </form>
+  <?php echo "<a class='back-link' href='admin.php'>BACK</a>"; ?>
 </div>
 </body>
 </html>

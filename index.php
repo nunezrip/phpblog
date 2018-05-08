@@ -2,6 +2,7 @@
 // Starting session - Session variables hold information about one single user, and are available to all pages in one application.
 session_start();
 
+
 // If seesion is not set redirect to the login.php page
 if(!isset($_SESSION['id'])) {
     header("location: register.php");
@@ -25,7 +26,7 @@ include_once("db.php");
 <body>
 
     <div class="heading">
-    <img src="img/BlogIcon2.png" alt="login-logo" height="100" width="200">
+    <img src="img/BlogIcon2.png" alt="login-logo" height="70" width="200">
     <h1 class='headline'>Welcome to <i>yourBlog!</i></h1>
     </div>
   <?php
@@ -68,7 +69,7 @@ include_once("db.php");
       }
 
       if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
-          echo "<a href='admin.php'>ADD POST</a> | <a href='home.php'>LOGOUT</a>";
+          echo "<a href='admin.php'>ADMIN</a> | <a href='home.php'>LOGOUT</a>";
       }
 
       if(!isset($_SESSION['username'])) {

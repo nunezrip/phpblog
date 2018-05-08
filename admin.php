@@ -51,7 +51,7 @@ if(!isset($_SESSION['admin']) && $_SESSION['admin'] !=1) {
         echo "<a class='back-link' href='admin.php'>BACK:</a>";
           echo "There are no posts to display!";
       }
-
+      
   ?>
         <!-- Link to redirect to the post.php page if there are no post  -->
 
